@@ -11,7 +11,7 @@ export default async function getguilds({ db, user }) {
     }
   })).json();
 
-  const owned = guilds.filter(g => g.owner)
+  const owned = guilds;;//.filter(g => g.owner)
 
   return ['guilds', owned ]  
 }
