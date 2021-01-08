@@ -1,5 +1,7 @@
 import fetch from 'node-fetch';
 
+const ADMIN_PERMS = 2147483647;
+
 export default async function getguilds({ db, user }) {
   if(!user)
     return [ 'error', 'Not authorized' ]
@@ -11,7 +13,7 @@ export default async function getguilds({ db, user }) {
     }
   })).json();
 
-  const owned = guilds;;//.filter(g => g.owner)
+  const owned = guilds.filter(g => g.permissions === ADMIN_PERMS)
 
   return ['guilds', owned ]  
 }

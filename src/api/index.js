@@ -6,8 +6,11 @@ import getRoles from './methods/getroles';
 import getChannels from './methods/getChannels';
 import getTriggers from './methods/gettriggers';
 import saveTrigger from './methods/saveTrigger';
+import getPrefix from './methods/getPrefix';
+import setPrefix from './methods/setPrefix';
 import deleteTrigger from './methods/deleteTrigger';
 import signin from './methods/signin';
+import generateInvite from './methods/generateInvite';
 
 export default { 
   auth,
@@ -17,7 +20,10 @@ export default {
   getTriggers,
   getRoles,
   getChannels,
+  getPrefix,
+  setPrefix,
   saveTrigger,
   deleteTrigger,
-  signin
+  signin,
+  generateInvite
 }

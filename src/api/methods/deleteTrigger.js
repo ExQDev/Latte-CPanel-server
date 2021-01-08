@@ -8,7 +8,9 @@ export default async function deleteTrigger({db, user, callback}) {
       _id: ObjectID(callback._id)
     })
   } else {
-    updatedCb = await db.collection('callbacks').deleteMany({})
+    updatedCb = await db.collection('callbacks').deleteMany({
+      guild: callback.guild
+    })
   }
   return [ 'deleted-callback', callback._id ]
 }
