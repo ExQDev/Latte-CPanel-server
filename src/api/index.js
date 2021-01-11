@@ -11,6 +11,8 @@ import setPrefix from './methods/setPrefix';
 import deleteTrigger from './methods/deleteTrigger';
 import signin from './methods/signin';
 import generateInvite from './methods/generateInvite';
+import getGreets from './methods/getGreets';
+import setGreets from './methods/setGreets';
 
 export default { 
   auth,
@@ -22,6 +24,8 @@ export default {
   getChannels,
   getPrefix,
   setPrefix,
+  getGreets,
+  setGreets,
   saveTrigger,
   deleteTrigger,
   signin,
