@@ -2,7 +2,7 @@ import btoa from 'btoa';
 import fetch from 'node-fetch';
 
 export default async function auth_discord({ db, user, accessToken, tokenType }) {
-  console.log('Oauth callback')
+  console.log('Oauth callback', accessToken)
   const incomeUser = await (await fetch('https://discord.com/api/users/@me', {
         headers: {
           authorization: `${tokenType} ${accessToken}`
@@ -21,7 +21,7 @@ export default async function auth_discord({ db, user, accessToken, tokenType })
     upsert: true,
     returnNewDocument: true
   })).value
-  console.log(updatedUser)
+  // console.log(updatedUser)
   return [ 'user', updatedUser ]
         // .then(response => {
         //   const { username, discriminator } = response

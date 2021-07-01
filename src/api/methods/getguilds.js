@@ -13,6 +13,8 @@ export default async function getguilds({ db, user }) {
     }
   })).json();
 
+  // console.log(guilds)
+  // console.log(guilds)
   const owned = guilds.filter(g => g.permissions === ADMIN_PERMS)
 
   return ['guilds', owned ]  
